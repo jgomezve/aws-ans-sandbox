@@ -21,7 +21,7 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ec2_id"></a> [ec2\_id](#output\_ec2\_id) | n/a |
-| <a name="output_ec2_private_ip"></a> [ec2\_private\_ip](#output\_ec2\_private\_ip) | n/a |
-| <a name="output_ec2_public_ip"></a> [ec2\_public\_ip](#output\_ec2\_public\_ip) | n/a |
+| <a name="output_ec2_id"></a> [ec2\_id](#output\_ec2\_id) | EC2 Instance ID |
+| <a name="output_ec2_private_ip"></a> [ec2\_private\_ip](#output\_ec2\_private\_ip) | EC2 Instance Private IP |
+| <a name="output_ec2_public_ip"></a> [ec2\_public\_ip](#output\_ec2\_public\_ip) | EC2 Instance Public IP |
 <!-- END_TF_DOCS -->

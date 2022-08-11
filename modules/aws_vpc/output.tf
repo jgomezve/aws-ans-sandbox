@@ -4,7 +4,7 @@ output "vpc_id" {
 }
 
 output "subnet_info" {
-  description = "VPC ID"
+  description = "Subnet Information (Subnet ID, Range, Security Group)"
   value = [for subnet in aws_subnet.subnet : {
     vpc_id            = aws_vpc.vpc.id
     subnet_id         = subnet.id
