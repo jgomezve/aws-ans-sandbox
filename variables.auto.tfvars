@@ -22,7 +22,7 @@ networks = [
     ]
   },
   {
-    network = "172.17.0.0/16"
+    network  = "172.17.0.0/16"
     internet = false
     subnets = [
       {
@@ -54,7 +54,6 @@ networks = [
   #   ]
   # }
 ]
-
 instances = [
   {
     name   = "VM1"

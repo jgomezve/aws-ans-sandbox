@@ -1,0 +1,17 @@
+
+---
+version: '>= 0.14.0'
+
+formatter: markdown table
+
+content: |-
+  # Sandbox for the AWS Advanced Networking Specialty Exam.
+  {{ .Requirements }}
+  {{ .Inputs }}
+  {{ .Outputs }}
+output:
+  file: README.md
+  mode: replace
+
+sort:
+  enabled: false
