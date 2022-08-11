@@ -1,0 +1,17 @@
+
+---
+version: '>= 0.14.0'
+
+formatter: markdown table
+
+content: |-
+  # AWS VPC Module
+  {{ .Requirements }}
+  {{ .Inputs }}
+  {{ .Outputs }}
+output:
+  file: README.md
+  mode: replace
+
+sort:
+  enabled: false
