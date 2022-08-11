@@ -1,15 +1,21 @@
-#### Table of Contents
-1. [Usage](#usage)
-2. [Requirements](#requirements)
-3. [Providers](#Providers)
-4. [Inputs](#inputs)
-5. [Outputs](#outputs)
+<!-- BEGIN_TF_DOCS -->
+# AWS VPC Module
+## Requirements
 
-## Usage
+| Name | Version |
+|------|---------|
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
+## Inputs
 
-*various commands
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_cidr"></a> [cidr](#input\_cidr) | AWS VPC CIDR | `string` | n/a | yes |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | AWS VPC's subnets | <pre>list(object({<br>    range             = string<br>    availability_zone = string<br>    type              = string<br>  }))</pre> | n/a | yes |
+| <a name="input_internet_access"></a> [internet\_access](#input\_internet\_access) | Flag to enable VPC Internet access | `bool` | `false` | no |
+## Outputs
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-*auto populated information
-
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+| Name | Description |
+|------|-------------|
+| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | VPC ID |
+| <a name="output_subnet_info"></a> [subnet\_info](#output\_subnet\_info) | VPC ID |
+<!-- END_TF_DOCS -->
