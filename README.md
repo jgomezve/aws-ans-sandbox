@@ -16,6 +16,6 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_subnets_info"></a> [subnets\_info](#output\_subnets\_info) | n/a |
-| <a name="output_vms_info"></a> [vms\_info](#output\_vms\_info) | n/a |
+| <a name="output_subnets_info"></a> [subnets\_info](#output\_subnets\_info) | Information about configured subnets |
+| <a name="output_vms_info"></a> [vms\_info](#output\_vms\_info) | Information about configured VMs |
 <!-- END_TF_DOCS -->

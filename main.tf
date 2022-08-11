@@ -11,12 +11,12 @@ locals {
   ])
   subnet_info_dict = { for subnet in local.subnet_info_list : subnet.subnet_range => subnet }
 
-  ec2_info_list = flatten([for ec2 in module.my_ec2 : {
+  ec2_info_list = [for ec2 in module.my_ec2 : {
     ec2_id     = ec2.ec2_id
-    private_ip = ec2.private_ip
-    public_ip  = ec2.public_ip
+    private_ip = ec2.ec2_private_ip
+    public_ip  = ec2.ec2_public_ip
     }
-  ])
+  ]
 }
 
 module "my_vpc" {
