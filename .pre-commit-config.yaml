@@ -10,3 +10,7 @@ repos:
     hooks:
       - id: terraform-docs-system
         args: ['./']
+      - id: terraform-docs-system
+        args: ['./modules/aws_ec2']
+      - id: terraform-docs-system
+        args: ['./modules/aws_vpc']
