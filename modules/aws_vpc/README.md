@@ -17,5 +17,5 @@
 | Name | Description |
 |------|-------------|
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | VPC ID |
-| <a name="output_subnet_info"></a> [subnet\_info](#output\_subnet\_info) | VPC ID |
+| <a name="output_subnet_info"></a> [subnet\_info](#output\_subnet\_info) | Subnet Information (Subnet ID, Range, Security Group) |
 <!-- END_TF_DOCS -->
