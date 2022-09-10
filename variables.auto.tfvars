@@ -1,82 +1,79 @@
 region = "us-east-2"
 networks = [
   {
-    network  = "172.16.0.0/16"
-    internet = true
+    network  = "10.0.0.0/16"
+    internet = false
+    name     = "Application-VPC"
     subnets = [
       {
-        cidr = "172.16.0.0/24"
+        cidr = "10.0.20.0/24"
         az   = "us-east-2a"
         type = "public"
+        name = "Server-Subent"
       },
       {
-        cidr = "172.16.1.0/24"
+        cidr = "10.0.10.0/24"
         az   = "us-east-2a"
-        type = "private"
+        type = "public"
+        name = "GWLBE-Subnet"
       },
       {
-        cidr = "172.16.2.0/24"
+        cidr = "10.0.0.0/24"
         az   = "us-east-2b"
-        type = "private"
+        type = "public"
+        name = "Jump-Subnet"
       }
     ]
   },
   {
-    network  = "172.17.0.0/16"
-    internet = false
+    network  = "192.168.0.0/16"
+    internet = true
+    name     = "Network-Appliance VPC"
     subnets = [
       {
-        cidr = "172.17.1.0/24"
+        cidr = "192.168.10.0/24"
         az   = "us-east-2a"
         type = "private"
+        name = "GWLB-Subnet"
       },
       {
-        cidr = "172.17.2.0/24"
+        cidr = "192.168.20.0/24"
         az   = "us-east-2a"
         type = "private"
+        name = "NVA-Subnet"
       },
       {
-        cidr = "172.17.3.0/24"
-        az   = "us-east-2b"
-        type = "private"
+        cidr = "192.168.0.0/24"
+        az   = "us-east-2c"
+        type = "public"
+        name = "Jump-Host-Subnet"
       }
     ]
-  },
-  # {
-  #   network = "172.18.0.0/16"
-  #   internet = false
-  #   subnets = [
-  #     {
-  #       cidr = "172.18.0.0/24"
-  #       az   = "us-east-2a"
-  #       type = "private"
-  #     }
-  #   ]
-  # }
+  }
 ]
 instances = [
   {
-    name   = "VM1"
+    name   = "App-Server"
     ami    = "089c6f2e3866f0f14"
     type   = "t2.micro"
-    subnet = "172.16.0.0/24"
+    subnet = "10.0.20.0/24"
   },
   {
-    name   = "VM2"
+    name   = "Jump-App"
     ami    = "089c6f2e3866f0f14"
     type   = "t2.micro"
-    subnet = "172.16.1.0/24"
+    subnet = "10.0.0.0/24"
   },
   {
-    name   = "VM3"
-    ami    = "0b2aa2d51e8c10b4a"
+    name   = "NVA"
+    ami    = "089c6f2e3866f0f14"
     type   = "t2.micro"
-    subnet = "172.17.2.0/24"
+    subnet = "192.168.20.0/24"
   },
   {
-    name   = "VM4"
-    ami    = "0b2aa2d51e8c10b4a"
+    name   = "Jump-NVA"
+    ami    = "089c6f2e3866f0f14"
     type   = "t2.micro"
-    subnet = "172.17.2.0/24"
+    subnet = "192.168.0.0/24"
   }
 ]

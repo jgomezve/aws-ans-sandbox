@@ -5,10 +5,12 @@ variable "networks" {
   type = list(object({
     network  = string
     internet = bool
+    name     = optional(string)
     subnets = list(object({
       cidr = string
       az   = string
       type = string
+      name = optional(string)
     }))
   }))
 }
