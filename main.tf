@@ -23,10 +23,12 @@ module "my_vpc" {
   source   = "./modules/aws_vpc"
   for_each = { for net in var.networks : net.network => net }
   cidr     = each.value.network
+  name     = lookup(each.value, "name", "")
   subnets = [for subnet in lookup(each.value, "subnets", []) : {
     range             = subnet.cidr
     availability_zone = subnet.az
     type              = lookup(subnet, "type", "private")
+    name              = lookup(subnet, "name", subnet.cidr)
   }]
   # TODO: If one subnet is public then true
   internet_access = true

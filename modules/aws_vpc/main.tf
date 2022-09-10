@@ -11,7 +11,12 @@ locals {
 }
 
 resource "aws_vpc" "vpc" {
-  cidr_block = var.cidr
+  cidr_block           = var.cidr
+  enable_dns_support   = var.enable_dns
+  enable_dns_hostnames = var.enable_hostname
+  tags = {
+    Name = var.name == "" ? var.cidr : var.name
+  }
 }
 
 resource "aws_subnet" "subnet" {
@@ -20,6 +25,9 @@ resource "aws_subnet" "subnet" {
   cidr_block              = each.value.range
   availability_zone       = each.value.availability_zone
   map_public_ip_on_launch = each.value.type == "public" ? true : false
+  tags = {
+    Name = lookup(each.value, "name", each.value.range)
+  }
 }
 
 

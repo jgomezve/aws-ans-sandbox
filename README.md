@@ -10,7 +10,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | n/a | yes |
-| <a name="input_networks"></a> [networks](#input\_networks) | n/a | <pre>list(object({<br>    network  = string<br>    internet = bool<br>    subnets = list(object({<br>      cidr = string<br>      az   = string<br>      type = string<br>    }))<br>  }))</pre> | n/a | yes |
+| <a name="input_networks"></a> [networks](#input\_networks) | n/a | <pre>list(object({<br>    network  = string<br>    internet = bool<br>    name     = optional(string)<br>    subnets = list(object({<br>      cidr = string<br>      az   = string<br>      type = string<br>      name = optional(string)<br>    }))<br>  }))</pre> | n/a | yes |
 | <a name="input_instances"></a> [instances](#input\_instances) | n/a | <pre>list(object({<br>    name   = string<br>    ami    = string<br>    type   = string<br>    subnet = string<br>  }))</pre> | n/a | yes |
 ## Outputs
 
